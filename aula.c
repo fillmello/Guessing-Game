@@ -15,7 +15,11 @@ int main(void) {
 
 
   printf("Bem Vindo ao JOGO DA ADVINHAÇÃO\nNesse jogo você terá que adivinhar um número secreto entre 1 e 10.\nBoa Sorte!!!\n");
-  scanf("%d", &nmr);
+
+
+  for (int i = 1; i <= 3; i++){
+    printf("Tentativa %d\n", i);
+    scanf("%d", &nmr);
 
 
   if (nmr < 0 || nmr > 10){
@@ -35,7 +39,7 @@ int main(void) {
     printf("OPS! Você errou. O número que eu escolhi é maior que %d.\n", nmr);
   }
   
-
+  }
   
 
   return 0;
