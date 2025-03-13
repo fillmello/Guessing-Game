@@ -69,9 +69,7 @@ int main(void) {
     printf("Número Inválido\n");
     i --;
     
-
-//Salve
-  
+`
 
   
 } else if (nmr == nmrscrt){
