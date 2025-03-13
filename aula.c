@@ -9,7 +9,7 @@ int main(void) {
   srand(time(NULL));
 
 
-  int nmrscrt, nmr, dificuldade, tentativas, min1, max1;
+  int nmrscrt, nmr, dificuldade, tentativas, min1, max1, pontos = 100;
 
 
   printf("Bem Vindo ao JOGO DA ADVINHAÇÃO\n");
@@ -53,7 +53,7 @@ int main(void) {
     if (i == tentativas){
       printf("Tentativa FINAL! \n");
       scanf("%d", &nmr);
-      printf("O número secreto era %d\n", nmrscrt);
+      printf("O número secreto era %d.\n", nmrscrt);
     
     
     }else {
@@ -70,31 +70,47 @@ int main(void) {
     i --;
     
 
-
+//Salve
   
 
   
 } else if (nmr == nmrscrt){
     printf("Parabéns! Você acertou!\n");
+    printf("Você fez %d pontos\n", pontos);
     break;
 
 
 
-} else if(nmr > nmrscrt){
-    printf("Que Pena. Você errou. O número que eu escolhi é menor que %d.\n",nmr);
 
+} else if(nmr > nmrscrt){
+    pontos -= 10;
+    if (i != tentativas){
+    printf("Que Pena. Você errou. O número que eu escolhi é menor que %d.\n",nmr);
+    
+    } else if (i == tentativas){
+      printf("Você fez %d pontos.\n", pontos);
+      break;
+    }
+    
 
 } else if(nmr < nmrscrt){
-    printf("OPS! Você errou. O número que eu escolhi é maior que %d.\n", nmr);
+    pontos -= 10;
+    if (i != tentativas){
+      printf("Que Pena. Você errou. O número que eu escolhi é maior que %d.\n",nmr);
+      
+      } else if (i == tentativas){
+        printf("Você fez %d pontos.\n", pontos);
+        break;
+      }
 
-  
+    }
 
 
-} 
+  } 
 
 
     
-  }
+
 
 
 
