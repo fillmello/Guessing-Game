@@ -9,15 +9,17 @@ int main(void) {
   srand(time(NULL));
 
 
-  int nmrscrt, nmr, dificuldade, tentativas, min1, max1, pontos = 100;
+  int nmrscrt, nmr, dificuldade = -1, tentativas, min1, max1, pontos = 100;
 
 
   printf("Bem Vindo ao JOGO DA ADVINHAÇÃO\n");
-  printf("Escolha uma dificuldade.\n 1 - Fácil\n 2 - Médio\n 3 - Difícil\n");
-  scanf("%d", &dificuldade);
 
-  do{
-    
+  for (int i = 0; i == 0; i++){
+
+
+    printf("Escolha uma dificuldade.\n 1 - Fácil\n 2 - Médio\n 3 - Difícil\n");
+    scanf("%d", &dificuldade);
+
     if(dificuldade == 1){
       nmrscrt = (rand() % 10) + 1 + 1;
       tentativas = 5;
@@ -39,11 +41,17 @@ int main(void) {
       printf("Nesse jogo você terá que adivinhar um número secreto entre 1 e 100.\nVocê tem 10 tentativas. Boa Sorte!!!\n");
       max1 = 100;
     }
-    else{
-      printf("Dificuldade Inválida\n");
+
+    
+    else { 
+      printf("Dificuldade inválida. Tente novamente.\n");
+      i --;
+
+
+    }
   
-    }  
-    }while (dificuldade < 1 || dificuldade > 3);
+    } 
+
 
 
 
